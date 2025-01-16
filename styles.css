@@ -1,0 +1,149 @@
+/* General reset and page setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'times new roman', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #331bbd;
+}
+
+.game-container {
+    background-color: hsl(218, 66%, 83%);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(178, 5, 69, 0.1);
+}
+
+/* Header */
+h1 {
+    color: #b00a13;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Status Display */
+#status {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3b4003;
+}
+
+/* Tic-Tac-Toe Grid */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #47003d;
+    border: 2px solid #d36217;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #8e0ab3;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #116ed2;
+    transform: scale(1.05);
+}
+
+.cell:active {
+    transform: scale(0.98);
+}
+
+/* Button Styling */
+button {
+    background-color: #2988a4;
+    color: rgb(99, 187, 110);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #d35f7c;
+    cursor: not-allowed;
+}
+
+/* Controls */
+.controls {
+    margin-top: 15px;
+}
+
+select {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+/* Score Section */
+#score {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#score p {
+    margin: 5px 0;
+}
+
+#score span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#score p:nth-child(1) {
+    color: #f44336; /* Player X color */
+}
+
+#score p:nth-child(2) {
+    color: #2196F3; /* Player O color */
+}
+
+#score p:nth-child(3) {
+    color: #ff9800; /* Draw color */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 400px) {
+    .game-container {
+        width: 280px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8em;
+    }
+
+    button {
+        width: 100%;
+    }
+}
